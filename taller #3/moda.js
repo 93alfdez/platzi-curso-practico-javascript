@@ -25,11 +25,9 @@
 
 function calcularModa(lista) {
     
-    // const lista = [];
+    let listaCont = {};
 
-    const listaCont = {};
-
-    const listaMapeo = lista.map(
+    lista.map(
             function (elemento) {
                 if (listaCont[elemento]){
                     listaCont[elemento] += 1;
@@ -39,11 +37,13 @@ function calcularModa(lista) {
             }
         );
     
-    const listaArr = Object.entries(listaCont).sort(
+    let listaArr = Object.entries(listaCont).sort(
         function (elementoA, elementoB) {
             return elementoA[1] - elementoB[1];
       }
     );
 
-    const moda = listaArr[listaArr.length - 1];
-}
+    return listaArr[listaArr.length - 1];
+
+    // return moda;
+};
